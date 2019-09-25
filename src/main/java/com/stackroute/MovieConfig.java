@@ -4,21 +4,20 @@ import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class MovieConfig {
 
     @Bean
+    @Scope("prototype")
     public Movie getMovie(){
         return new Movie();
     }
 
     @Bean
     public Actor getActor(){
-        Actor actor = new Actor();
-        actor.setName("Bill Hader");
-        actor.setGender("male");
-        actor.setAge(41);
+        Actor actor = new Actor("Bill Hader","male",41);
         return actor;
     }
 }
