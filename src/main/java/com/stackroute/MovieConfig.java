@@ -15,7 +15,10 @@ public class MovieConfig {
 
     @Bean
     public Actor getActor(){
-        Actor actor = new Actor("Bill Hader","male",41);
+        Actor actor = new Actor();
+        actor.setName("Bill Hader");
+        actor.setGender("male");
+        actor.setAge(41);
         return actor;
     }
 }
