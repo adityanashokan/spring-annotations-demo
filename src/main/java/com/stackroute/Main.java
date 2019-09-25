@@ -1,6 +1,7 @@
 package com.stackroute;
 
 import com.stackroute.demo.BeanLifecycleDemoBean;
+import com.stackroute.demo.BeanPostProcessorDemoBean;
 import com.stackroute.domain.Movie;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -18,9 +19,10 @@ public class Main {
         */
 
         ApplicationContext context1 = new AnnotationConfigApplicationContext(Config.class);
-        BeanLifecycleDemoBean b = (BeanLifecycleDemoBean) context1.getBean(BeanLifecycleDemoBean.class);
-        System.out.println("BeanLifecycleDemoBean Initiated");
+       // BeanLifecycleDemoBean b = (BeanLifecycleDemoBean) context1.getBean(BeanLifecycleDemoBean.class);
+        //System.out.println("BeanLifecycleDemoBean Initiated");
 
-
+        BeanPostProcessorDemoBean b2 = (BeanPostProcessorDemoBean) context1.getBean(BeanPostProcessorDemoBean.class);
+        System.out.println("BeanPostProcessorDemoBean Initiated");
     }
 }
