@@ -11,11 +11,11 @@ public class Main {
     public static void main(String[] args) {
 
         ApplicationContext context = new AnnotationConfigApplicationContext(MovieConfig.class);
-        Movie m1 = (Movie) context.getBean(Movie.class);
+        Movie m1 = (Movie) context.getBean("movieA",Movie.class);
         System.out.println("Bean File Loaded using ApplicationContext");
         m1.display();
 
-        Movie m2 = (Movie)context.getBean(Movie.class);
+        Movie m2 = (Movie)context.getBean("movieB",Movie.class);
         m2.display();
 
         System.out.println(m1==m2);

@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class MovieConfig {
 
-    @Bean
+    @Bean(name = {"movieA","movieB"})
     @Scope("prototype")
     public Movie getMovie(){
         return new Movie();
